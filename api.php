@@ -1,12 +1,19 @@
 <?php 
-/*if (isset($_POST['customer_id']) && $_POST['customer_id']!="") {
- $customer_id = $_POST['customer_id'];*/
+// if (isset($_POST['Signinbutton'])) {
+//     $empemail=trim($_POST['email']);
+//     $password=trim($_POST['password']);
+// }
+
+ 
+
  
  // path of the REST API URL
 $url = "https://portal.daun-penh.com/api/login.php";
  
  $postdata = json_encode(array(
+    //"empemail" => $empemail,
     "empemail" => "han.vatana@dpc-group.com",
+    //"password" => $password
     "password" => "123@123"
 ));
 
@@ -27,6 +34,9 @@ curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
  $result = json_decode($response);
  echo $result->message;
  echo $result->Tooken;
+
+ //echo $empemail;
+  //echo $password;
 
  if(!$result) {
  echo "No data found";
